@@ -5,7 +5,7 @@ About GetMap request you may read [here] (http://docs.geoserver.org/2.6.x/en/use
 
 Pattern request: 
 ```
-?FORMAT=&LAYERS=&SERVICE=&VERSION=&REQUEST=&STYLES=&SRS= &BBOX=&WIDTH=&HEIGHT=
+?FORMAT=&LAYERS=&SERVICE=&VERSION=&REQUEST=&STYLES=&SRS=&BBOX=&WIDTH=&HEIGHT=
 ```
 
 Example: 
