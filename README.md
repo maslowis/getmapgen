@@ -10,15 +10,15 @@ Pattern request:
 
 Example: 
 ```
-http://surgut.itpgrad.ru/CacheService/GetTile?FORMAT=image%2Fpng&LAYERS=SURG%3ACATALOG_65924&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&SRS=EPSG%3A3857&BBOX=8150614,8676958,8170181.8792375,8696525.8792375&WIDTH=256&HEIGHT=256
+http://surgut.itpgrad.ru/CacheService/GetTile?FORMAT=image%2Fpng&LAYERS=test_mo_repl2%3ACATALOG_65924%2Ctest_mo_repl2%3ACATALOG_65945%2Ctest_mo_repl2%3ACATALOG_65830%2Ctest_mo_repl2%3ACATALOG_62949&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&SRS=EPSG%3A3857&BBOX=8150614,8696525.8792375,8170181.8792375,8716093.758475&WIDTH=256&HEIGHT=256
 ```
 
 UI form has a fields:
-* `Storage` - name of datastore (in example above it is keyword `SURG`);
+* `Storage` - name of datastore (in example above it is keyword `test_mo_repl2`);
 * `Coordinate System` - coordinate system (supported only EPSG), should set only the number (for example, if coordinate system is `EPSG:3857` then you should set `3857` in the field);
 * `min X, min Y, max X, max Y` - bounding box for map extent, values should be in units of the Spatial Reference System for map;
 * `Zooms` - list of map scales;
-* `Layers` - list of IDs of layers (in example above it is keyword `65924`);
+* `Layers` - list of IDs of layers (in example above it is keyword `65924`, `65945` etc.);
 * `Host` - host address, for example `http://surgut.itpgrad.ru/` or `http://192.168.1.1/`;
 * `Pattern Query` - default pattern of GetMap request is `CacheService/GetTile?FORMAT=&LAYERS=&SERVICE=&VERSION=&REQUEST=&STYLES=&SRS=&BBOX=&WIDTH=&HEIGHT=`, pattern may vary (for example you may set `CacheTile?FORMAT=&LAYERS=&SERVICE=&VERSION=&REQUEST=&STYLES=&SRS=&BBOX=&WIDTH=&HEIGHT=`, but it should not violate the pattern request shown above).
 
