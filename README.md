@@ -3,7 +3,7 @@ Desktop utility to generate GetMap requests.
 
 About GetMap request you may read [here] (http://docs.geoserver.org/2.6.x/en/user/services/wms/reference.html#getmap).
 
-Pattern request: 
+Supported pattern request: 
 ```
 ?FORMAT=&LAYERS=&SERVICE=&VERSION=&REQUEST=&STYLES=&SRS=&BBOX=&WIDTH=&HEIGHT=
 ```
