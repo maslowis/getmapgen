@@ -89,7 +89,7 @@ public class RequestTemplate {
      * @param minY minimum Y-axis of the bounding box for specific tile
      * @return getmap request as string
      */
-    public String getRequest(double maxX, double maxY, double minX, double minY) {
+    public String getRequest(String maxX, String maxY, String minX, String minY) {
         StringBuilder requestBuilder = new StringBuilder(this.template);
         String bbox = new StringBuilder()
                 .append(minX)
