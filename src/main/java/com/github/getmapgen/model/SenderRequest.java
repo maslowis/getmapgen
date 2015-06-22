@@ -3,9 +3,6 @@ package com.github.getmapgen.model;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-
-import java.io.IOException;
 
 /**
  * Object is responsible for sending getmap request
@@ -15,8 +12,8 @@ import java.io.IOException;
 public class SenderRequest {
     private CloseableHttpClient client;
 
-    public SenderRequest() {
-        this.client = HttpClients.createDefault();
+    public SenderRequest(CloseableHttpClient client) {
+        this.client = client;
     }
 
     /**
@@ -32,7 +29,7 @@ public class SenderRequest {
             String msg = "REQUEST " + request.getURI() + " IS SEND\n" + "RESPONSE: " + response.getStatusLine().toString() + "\n";
             response.close();
             return msg;
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return ("REQUEST " + request.getURI() + " FAILED\n");
         }

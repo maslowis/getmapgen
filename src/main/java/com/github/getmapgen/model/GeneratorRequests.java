@@ -3,6 +3,7 @@ package com.github.getmapgen.model;
 import com.github.getmapgen.Util;
 import com.github.getmapgen.controller.FormDelegate;
 import com.github.getmapgen.view.InputValues;
+import org.apache.http.impl.client.HttpClients;
 
 /**
  * Generator for getmap request
@@ -65,10 +66,10 @@ public class GeneratorRequests implements Runnable {
 //        get input form form
         final InputValues input = delegate.getInput();
 //        instantiating sender and template for getmap request
-        final SenderRequest sender = new SenderRequest();
+        final SenderRequest sender = new SenderRequest(HttpClients.createDefault());
         final RequestTemplate template = new RequestTemplate(input);
 //        variables for calculate bbox of tiles
-        final int[] zooms = Util.stringToInteger(Util.splitString(input.getZooms()));
+        final int[] zooms = Util.stringToInt(Util.splitString(input.getZooms()));
         final double maxX_Map = Double.valueOf(input.getMaxX());
         final double maxY_Map = Double.valueOf(input.getMaxY());
         final double minX_Map = Double.valueOf(input.getMinX());
@@ -103,7 +104,7 @@ public class GeneratorRequests implements Runnable {
                     double minX_Tile = minX_Map + ((x - 1) * (lengthTile));
                     double minY_Tile = minY_Map + ((y - 1) * (lengthTile));
 //                    build getmap request as string url
-                    String url = template.getRequest(maxX_Tile, maxY_Tile, minX_Tile, minY_Tile);
+                    String url = template.getRequest(String.valueOf(maxX_Tile), String.valueOf(maxY_Tile), String.valueOf(minX_Tile), String.valueOf(minY_Tile));
 //                    send getmap request and get status response
                     String response = sender.send(url);
 //                    display status response
