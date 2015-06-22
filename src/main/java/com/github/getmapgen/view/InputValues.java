@@ -17,6 +17,22 @@ public class InputValues {
     private String zooms;
     private String layers;
 
+    public InputValues() {
+    }
+
+    public  InputValues(String storage, String coordinateSystem, String minX, String minY, String maxX, String maxY, String host, String patternQuery, String zooms, String layers) {
+        this.storage = storage;
+        this.coordinateSystem = coordinateSystem;
+        this.minX = minX;
+        this.minY = minY;
+        this.maxX = maxX;
+        this.maxY = maxY;
+        this.host = host;
+        this.patternQuery = patternQuery;
+        this.zooms = zooms;
+        this.layers = layers;
+    }
+
     public String getStorage() {
         return storage;
     }
