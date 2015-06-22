@@ -17,7 +17,7 @@ public final class Util {
      * @return array strings
      */
     public static String[] splitString(String arg) {
-        return arg.split(", \\n|(,|, )|(\\n| \\n)| ");
+        return arg.split("(, \\n|,\\n)|(, |,)|( \\n|\\n)|( )");
     }
 
     /**
@@ -26,7 +26,7 @@ public final class Util {
      * @param args source string array
      * @return integer array
      */
-    public static int[] stringToInteger(String[] args) {
+    public static int[] stringToInt(String[] args) {
         int[] result = new int[args.length];
         for (int i = 0; i < args.length; i++) {
             result[i] = Integer.valueOf(args[i]);
