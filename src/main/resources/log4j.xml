@@ -3,11 +3,10 @@
 
 <log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4j/">
 
-    <appender name="Application" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="logs/getmapgen.log"/>
-        <param name="Append" value="true"/>
+    <appender name="Application" class="org.apache.log4j.FileAppender">
+        <param name="File" value="logs/getmapgen.${current.date}.log"/>
+        <param name="Append" value="false"/>
         <param name="Encoding" value="UTF-8"/>
-        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
         <layout class="org.apache.log4j.EnhancedPatternLayout">
             <param name="ConversionPattern" value="%d{ISO8601} - %m%n"/>
         </layout>
