@@ -1,5 +1,7 @@
 package com.github.getmapgen.controller;
 
+import org.apache.log4j.Logger;
+
 import java.awt.event.ActionEvent;
 
 /**
@@ -8,6 +10,7 @@ import java.awt.event.ActionEvent;
  * @author maslowis
  */
 public class ExitButtonListener extends AbstractButtonListener {
+    private static final Logger log = Logger.getLogger(ExitButtonListener.class);
 
     public ExitButtonListener(FormDelegate delegate) {
         super(delegate);
@@ -25,7 +28,7 @@ public class ExitButtonListener extends AbstractButtonListener {
             try {
                 getWorkThread().join(5000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                log.error(e);
             }
         }
         getDelegate().setVisibleForm(false);
