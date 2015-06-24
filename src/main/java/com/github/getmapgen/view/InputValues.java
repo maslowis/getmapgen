@@ -13,14 +13,14 @@ public class InputValues {
     private String maxX;
     private String maxY;
     private String host;
-    private String patternQuery;
+    private String patternRequest;
     private String zooms;
     private String layers;
 
     public InputValues() {
     }
 
-    public  InputValues(String storage, String coordinateSystem, String minX, String minY, String maxX, String maxY, String host, String patternQuery, String zooms, String layers) {
+    public  InputValues(String storage, String coordinateSystem, String minX, String minY, String maxX, String maxY, String host, String patternRequest, String zooms, String layers) {
         this.storage = storage;
         this.coordinateSystem = coordinateSystem;
         this.minX = minX;
@@ -28,7 +28,7 @@ public class InputValues {
         this.maxX = maxX;
         this.maxY = maxY;
         this.host = host;
-        this.patternQuery = patternQuery;
+        this.patternRequest = patternRequest;
         this.zooms = zooms;
         this.layers = layers;
     }
@@ -89,12 +89,12 @@ public class InputValues {
         this.host = host;
     }
 
-    public String getPatternQuery() {
-        return patternQuery;
+    public String getPatternRequest() {
+        return patternRequest;
     }
 
-    public void setPatternQuery(String patternQuery) {
-        this.patternQuery = patternQuery;
+    public void setPatternRequest(String patternRequest) {
+        this.patternRequest = patternRequest;
     }
 
     public String getZooms() {

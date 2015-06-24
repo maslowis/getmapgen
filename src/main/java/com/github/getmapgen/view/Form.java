@@ -256,7 +256,7 @@ public class Form extends JFrame {
         input.setStorage(this.storage.getText());
         input.setCoordinateSystem(this.coordinateSystem.getText());
         input.setHost(this.host.getText());
-        input.setPatternQuery(this.patternRequest.getText());
+        input.setPatternRequest(this.patternRequest.getText());
         input.setMaxX(this.maxX.getText());
         input.setMaxY(this.maxY.getText());
         input.setMinX(this.minX.getText());

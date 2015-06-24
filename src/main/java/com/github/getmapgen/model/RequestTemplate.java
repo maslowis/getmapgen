@@ -33,7 +33,7 @@ public class RequestTemplate {
         this.layers = buildLayers(input.getStorage(), input.getLayers());
         this.srs = buildSrs(input.getCoordinateSystem());
         this.host = input.getHost();
-        this.pattern = input.getPatternQuery();
+        this.pattern = input.getPatternRequest();
         this.template = buildPattern();
     }
 
