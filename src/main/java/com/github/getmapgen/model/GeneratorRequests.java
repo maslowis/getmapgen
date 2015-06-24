@@ -54,6 +54,13 @@ public class GeneratorRequests implements Runnable {
         return Math.max((maxX_Map - minX_Map), (maxY_Map - minY_Map));
     }
 
+
+    private String getInitMessage(InputValues input) {
+        return String.format("INITIAL PARAMETERS\n" +
+                "STORAGE: %1s\nCOORDINATE SYS: %2s\n" +
+                "MAX X: %3s; MAX Y: %4s; MIN X: %5s; MIN Y: %6s\nZOOMS:\n%7s\nLAYERS:\n%8s\nHOST: %9s\nPATTERN REQUEST: %10s", input.getStorage(), input.getCoordinateSystem(), input.getMaxX(), input.getMaxY(), input.getMinX(), input.getMinY(), input.getZooms(), input.getLayers(), input.getHost(), input.getPatternRequest());
+    }
+
     private boolean threadInterrupted() {
         return Thread.currentThread().isInterrupted();
     }
@@ -65,6 +72,8 @@ public class GeneratorRequests implements Runnable {
     public void run() {
 //        get input form form
         final InputValues input = delegate.getInput();
+//        display parameters input in fields of form
+        delegate.displayStatus(getInitMessage(input));
 //        instantiating sender and template for getmap request
         final SenderRequest sender = new SenderRequest(HttpClients.createDefault());
         final RequestTemplate template = new RequestTemplate(input);
