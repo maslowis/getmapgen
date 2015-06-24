@@ -146,7 +146,7 @@ public class Form extends JFrame {
     private void setDefaultValues() {
         this.storage.setText("MEGION");
         this.coordinateSystem.setText("3857");
-        this.zooms.setText("10000\n25000\n50000\n100000\n250000\n500000\n1000000\n");
+        this.zooms.setText("10000\n25000\n50000\n100000\n250000\n500000\n1000000");
         this.layers.setText("60712\n59144");
         this.host.setText("http://map1.admmegion.ru/");
         this.patternRequest.setText("CacheService/GetTile?FORMAT=&LAYERS=&SERVICE=&VERSION=&REQUEST=&STYLES=&SRS=&BBOX=&WIDTH=&HEIGHT=");
