@@ -116,6 +116,11 @@ public class InputValues implements Serializable {
         this.layers = layers;
     }
 
+    /**
+     * Return instance {@link com.github.getmapgen.view.InputValues} with default values
+     *
+     * @return {@link com.github.getmapgen.view.InputValues}
+     */
     public static InputValues getDefaultInputValues() {
         InputValues defaultInputValues = new InputValues();
         defaultInputValues.setStorage("MEGION");
