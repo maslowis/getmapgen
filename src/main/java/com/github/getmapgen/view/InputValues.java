@@ -116,4 +116,25 @@ public class InputValues implements Serializable {
         this.layers = layers;
     }
 
+    public static InputValues getDefaultInputValues() {
+        InputValues defaultInputValues = new InputValues();
+        defaultInputValues.setStorage("MEGION");
+        defaultInputValues.setCoordinateSystem("3857");
+        defaultInputValues.setZooms("10000\n" +
+                "25000\n" +
+                "50000\n" +
+                "100000\n" +
+                "250000\n" +
+                "500000\n" +
+                "1000000");
+        defaultInputValues.setLayers("60712\n" +
+                "59144");
+        defaultInputValues.setHost("http://map1.admmegion.ru/");
+        defaultInputValues.setPatternRequest("CacheService/GetTile?FORMAT=&LAYERS=&SERVICE=&VERSION=&REQUEST=&STYLES=&SRS=&BBOX=&WIDTH=&HEIGHT=");
+        defaultInputValues.setMaxX("8481409.24530765");
+        defaultInputValues.setMaxY("8668214.40303203");
+        defaultInputValues.setMinX("8452441.87870273");
+        defaultInputValues.setMinY("8629333.48988297");
+        return defaultInputValues;
+    }
 }

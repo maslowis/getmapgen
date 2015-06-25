@@ -149,13 +149,13 @@ public class Form extends JFrame {
         Object object = Util.deserialize(Main.tempFile);
         if (object != null && object instanceof InputValues) {
             InputValues lastInput = (InputValues) object;
-            this.setLastInput(lastInput);
+            this.setValuesFields(lastInput);
         } else {
-            this.setDefaultValues();
+            this.setValuesFields(InputValues.getDefaultInputValues());
         }
     }
 
-    private void setLastInput(InputValues input) {
+    private void setValuesFields(InputValues input) {
         this.storage.setText(input.getStorage());
         this.coordinateSystem.setText(input.getCoordinateSystem());
         this.zooms.setText(input.getZooms());
@@ -166,19 +166,6 @@ public class Form extends JFrame {
         this.maxY.setText(input.getMaxY());
         this.minX.setText(input.getMinX());
         this.minY.setText(input.getMinY());
-    }
-
-    private void setDefaultValues() {
-        this.storage.setText("MEGION");
-        this.coordinateSystem.setText("3857");
-        this.zooms.setText("10000\n25000\n50000\n100000\n250000\n500000\n1000000");
-        this.layers.setText("60712\n59144");
-        this.host.setText("http://map1.admmegion.ru/");
-        this.patternRequest.setText("CacheService/GetTile?FORMAT=&LAYERS=&SERVICE=&VERSION=&REQUEST=&STYLES=&SRS=&BBOX=&WIDTH=&HEIGHT=");
-        this.maxX.setText("8481409.24530765");
-        this.maxY.setText("8668214.40303203");
-        this.minX.setText("8452441.87870273");
-        this.minY.setText("8629333.48988297");
     }
 
     public void setHelpers() {
