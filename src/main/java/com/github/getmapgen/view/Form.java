@@ -1,5 +1,7 @@
 package com.github.getmapgen.view;
 
+import com.github.getmapgen.Main;
+import com.github.getmapgen.Util;
 import com.github.getmapgen.controller.ExitButtonListener;
 import com.github.getmapgen.controller.FormDelegate;
 import com.github.getmapgen.controller.RunButtonListener;
@@ -51,7 +53,7 @@ public class Form extends JFrame {
         this.setBorders();
         this.setLayoutManagers();
         this.setColors(Color.DARK_GRAY);
-        this.setDefaultValues();
+        this.initInputFields();
         this.setHelpers();
         this.setRelationships();
         this.setListeners();
@@ -141,6 +143,29 @@ public class Form extends JFrame {
         this.panelNordEast.setBackground(color);
         this.panelCenterNord.setBackground(color);
         this.panelCenterSouth.setBackground(color);
+    }
+
+    private void initInputFields() {
+        Object object = Util.deserialize(Main.tempFile);
+        if (object != null && object instanceof InputValues) {
+            InputValues lastInput = (InputValues) object;
+            this.setLastInput(lastInput);
+        } else {
+            this.setDefaultValues();
+        }
+    }
+
+    private void setLastInput(InputValues input) {
+        this.storage.setText(input.getStorage());
+        this.coordinateSystem.setText(input.getCoordinateSystem());
+        this.zooms.setText(input.getZooms());
+        this.layers.setText(input.getLayers());
+        this.host.setText(input.getHost());
+        this.patternRequest.setText(input.getPatternRequest());
+        this.maxX.setText(input.getMaxX());
+        this.maxY.setText(input.getMaxY());
+        this.minX.setText(input.getMinX());
+        this.minY.setText(input.getMinY());
     }
 
     private void setDefaultValues() {
@@ -263,6 +288,7 @@ public class Form extends JFrame {
         input.setMinY(this.minY.getText());
         input.setLayers(this.layers.getText());
         input.setZooms(this.zooms.getText());
+        Util.serialize(input, Main.tempFile);
         return input;
     }
 }

@@ -1,11 +1,14 @@
 package com.github.getmapgen.view;
 
+import java.io.Serializable;
+
 /**
  * Object containing the initial parameters for generation getmap requests
  *
  * @author maslowis
  */
-public class InputValues {
+public class InputValues implements Serializable {
+    private static final long serialVersionUID = 8118878230763975043L;
     private String storage;
     private String coordinateSystem;
     private String minX;
@@ -20,7 +23,7 @@ public class InputValues {
     public InputValues() {
     }
 
-    public  InputValues(String storage, String coordinateSystem, String minX, String minY, String maxX, String maxY, String host, String patternRequest, String zooms, String layers) {
+    public InputValues(String storage, String coordinateSystem, String minX, String minY, String maxX, String maxY, String host, String patternRequest, String zooms, String layers) {
         this.storage = storage;
         this.coordinateSystem = coordinateSystem;
         this.minX = minX;
