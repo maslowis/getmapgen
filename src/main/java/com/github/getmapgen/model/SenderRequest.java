@@ -29,6 +29,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.log4j.Logger;
 
+import java.io.IOException;
+
 /**
  * Object is responsible for sending getmap request
  *
@@ -57,7 +59,7 @@ public class SenderRequest {
             response = client.execute(request);
             msg = String.format("REQUEST %1s IS SEND. RESPONSE: %2s.", url, response.getStatusLine().toString());
             response.close();
-        } catch (Exception e) {
+        } catch (IOException e) {
             msg = String.format("REQUEST %1s FAILED", url);
             log.error(msg, e);
         }
