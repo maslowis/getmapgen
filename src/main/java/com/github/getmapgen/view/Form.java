@@ -170,7 +170,7 @@ public class Form extends JFrame {
     }
 
     private void initInputFields() {
-        Object object = Util.deserialize(Main.tempFile);
+        Object object = Util.deserialize(Main.TEMP_FILE);
         if (object != null && object instanceof InputValues) {
             InputValues lastInput = (InputValues) object;
             this.setValuesFields(lastInput);
@@ -299,7 +299,7 @@ public class Form extends JFrame {
         input.setMinY(this.minY.getText());
         input.setLayers(this.layers.getText());
         input.setZooms(this.zooms.getText());
-        Util.serialize(input, Main.tempFile);
+        Util.serialize(input, Main.TEMP_FILE);
         return input;
     }
 }

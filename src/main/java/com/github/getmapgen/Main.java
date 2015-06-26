@@ -35,7 +35,7 @@ import java.util.Date;
  * @author maslowis
  */
 public class Main {
-    public static final String tempFile = "getmapgen-temp.ser";
+    public static final String TEMP_FILE = "getmapgen-temp.ser";
 
     static {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
