@@ -48,6 +48,7 @@ public class SenderRequestTest {
         MockitoAnnotations.initMocks(this);
     }
 
+//    TODO test or method should be rewrite because it fail with NullPointerException
     @Test
     public void testSend() throws Exception {
         sender.send(anyString());
